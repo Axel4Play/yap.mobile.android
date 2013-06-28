@@ -174,7 +174,7 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 		case R.id.menu_page:
 			int pageCount = 1;
 			if (MESSAGES != 0) {
-				pageCount = (int) Math.ceil(MESSAGES / Double.parseDouble(sharedPreferences.getString("messages_count", "20")));
+				pageCount = (int) Math.ceil(MESSAGES / Double.parseDouble(sharedPreferences.getString("messages_count", "25")));
 			} 
 			String[] pages = new String[pageCount];
 			for(int i = 0; i < pageCount; i++) {

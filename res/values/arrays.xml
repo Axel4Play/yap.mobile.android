@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="forum">
+        <item>Главная</item>
+        <item>Картинки</item>
+        <item>Видео</item>
+        <item>События</item>
+        <item>Авто/Мото</item>
+        <item>Зверьё</item>
+        <item>Двигатель Торговли</item>
+        <item>Фотопутешествия</item>
+        <item>Анекдоты и приколы</item>
+        <item>Фотожаба</item>
+        <item>Креативы</item>
+        <item>ЯП-издат</item>
+        <item>Флэш</item>
+        <item>Поэзия</item>
+        <item>Весёлая рифма</item>
+        <item>Золото</item>
+        <item>Клубничка</item>
+        <!--item>Уголок падонка</item-->
+        <item>Коллекция</item>
+        <!--item>ЯП-Обзор</item-->
+        <item>Беседы на Завалинке</item>
+        <item>ЭВМъ</item>
+        <!--item>ЯП Тусовка</item-->
+        <item>Барахолка</item>
+        <item>Про Это</item>
+        <item>Цех ЯП-творчества</item>
+        <item>Кинематографъ</item>
+        <item>Крутятся Диски</item>
+        <item>Игры</item>
+        <item>Кулинария</item>
+        <item>Физкультура и спорт</item>
+        <item>Поздравления</item>
+        <item>Инкубатор</item>
+        <item>Работа сайта</item>
+        <!--item>Вторсырье</item-->
+        <item>Склад баянов</item>
+		<!--item>Утиль</item-->
+    </string-array>
+    
+    <integer-array name="forum_id">
+        <item>0</item>
+        <item>2</item>
+        <item>28</item>
+        <item>1</item>
+        <item>11</item>
+        <item>13</item>
+        <item>18</item>
+        <item>43</item>
+        <item>7</item>
+        <item>27</item>
+        <item>6</item>
+        <item>40</item>
+        <item>8</item>
+        <item>41</item>
+        <item>38</item>
+        <item>9</item>
+        <item>36</item>
+        <!--item>4</item-->
+        <item>26</item>
+        <!--item>16</item-->
+        <item>14</item>
+        <item>32</item>
+        <!--item>25</item-->
+        <item>44</item>
+        <item>33</item>
+        <item>45</item>
+        <item>29</item>
+        <item>31</item>
+        <item>42</item>
+        <item>30</item>
+        <item>24</item>
+        <item>37</item>
+        <item>3</item>
+        <item>5</item>
+        <!--item>17</item-->
+        <item>23</item>
+		<!--item>35</item-->
+    </integer-array>
+
+    <string-array name="lenta">
+        <item>Главная</item>
+        <item>Картинки</item>
+        <item>Видео</item>
+        <item>События</item>
+        <item>Авто/Мото</item>
+        <item>Зверьё</item>
+        <item>Фотожаба</item>
+        <item>Флэш</item>
+        <item>Арт</item>
+        <item>Инкубатор</item>
+	</string-array>
+
+    <integer-array name="lenta_id">
+        <item>1001</item> <!-- www -->
+        <item>1002</item> <!-- pics -->
+        <item>1003</item> <!-- video -->
+        <item>1004</item> <!-- news -->
+        <item>1005</item> <!-- auto -->
+        <item>1006</item> <!-- animals -->
+        <item>1007</item> <!-- fotozhaba -->
+        <item>1008</item> <!-- flash -->
+        <item>1009</item> <!-- art -->
+        <item>1010</item> <!-- inkubator -->
+	</integer-array>
+	
+    
+	<string-array name="themes">
+        <item>Светлая</item>
+        <item>Темная</item>
+	</string-array>
+	
+	<string-array name="themes_values">
+        <item>Theme_Holo_Light</item>
+        <item>Theme_Holo</item>
+	</string-array>
+
+</resources>

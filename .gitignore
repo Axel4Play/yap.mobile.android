@@ -1,0 +1,14 @@
+# Android generated
+bin/
+gen/
+
+# Eclipse
+.classpath
+.project
+.externalToolBuilders/
+
+libs/
+assets/
+/lint.xml
+/proguard-project.txt
+/project.properties

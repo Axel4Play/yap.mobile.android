@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SlidingPaneLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".TopicActivity"
+    android:id="@+id/sliding_pane_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/frame_layout_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical" >
+		
+    	<FrameLayout
+        	android:id="@+id/frame_layout_right"
+        	android:layout_width="match_parent"
+        	android:layout_height="0dp"
+        	android:layout_weight="1" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="1px"
+			android:orientation="vertical"
+			android:background="@color/gray" >    
+		</LinearLayout>
+		
+    	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:focusable="true"
+			android:focusableInTouchMode="true" >
+
+			<ImageButton 
+				android:id="@+id/imgView" 
+				android:src="@drawable/device_access_camera_dark"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:padding="2dp"
+				android:cropToPadding="true"
+				android:scaleType="center"
+				android:clickable="true"
+				android:contentDescription="@string/empty"
+				android:background="?android:attr/selectableItemBackground"
+				android:onClick="onPhotoClick" />
+        
+			<EditText
+				android:id="@+id/editText"
+				android:inputType="textAutoCorrect"
+				android:layout_width="0dp"
+				android:layout_height="48dp"
+				android:layout_weight="1"
+				android:nextFocusUp="@id/editText" 
+				android:nextFocusLeft="@id/editText" />
+
+			<ImageButton 
+				android:id="@+id/send" 
+				android:src="@drawable/social_send_now_dark"
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:scaleType="centerCrop"
+				android:clickable="true"
+				android:contentDescription="@string/empty"
+				android:background="?android:attr/selectableItemBackground"
+				android:onClick="onSendClick" />
+
+    	</LinearLayout>
+
+	</LinearLayout>
+    
+</android.support.v4.widget.SlidingPaneLayout>

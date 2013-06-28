@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory
+		android:title="@string/settings_user">
+
+		<EditTextPreference
+		    android:enabled="false"
+			android:key="login"
+			android:maxLength="50"
+			android:title="@string/settings_user_login_title" >
+		</EditTextPreference>
+		
+		<EditTextPreference
+			android:key="password"
+			android:enabled="false"
+			android:maxLength="50"
+			android:inputType="textPassword"
+			android:title="@string/settings_user_passw_title" >
+		</EditTextPreference>
+	    		
+	</PreferenceCategory>
+    	
+	<PreferenceCategory
+		android:title="@string/settings_theme">
+
+	    <!-- 
+		<CheckBoxPreference
+			android:key="chb2"
+			android:summary="checkbox2_summary"
+			android:title="checkbox2_title">
+		</CheckBoxPreference>
+		 -->
+		  
+		<ListPreference
+		    android:key="theme"
+			android:entries="@array/themes"
+			android:entryValues="@array/themes_values"
+			android:defaultValue="Theme_Holo_Light"
+			android:title="@string/settings_theme_title" >
+		</ListPreference>
+		
+		<EditTextPreference
+			android:key="topic_count"
+			android:inputType="number"
+			android:numeric="integer"
+			android:maxLength="3"
+			android:defaultValue="100"
+			android:title="@string/settings_topic_count_title"
+			android:summary="@string/settings_topic_count_summary" >
+		</EditTextPreference>
+
+		<EditTextPreference
+		    android:enabled="false"
+			android:key="messages_count"
+			android:inputType="number"
+			android:numeric="integer"
+			android:maxLength="3"
+			android:defaultValue="25"
+			android:title="@string/settings_messages_count_title"
+			android:summary="@string/settings_messages_count_summary" >
+		</EditTextPreference>
+				
+	</PreferenceCategory>
+	
+</PreferenceScreen>

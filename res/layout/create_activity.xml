@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	
+	<LinearLayout
+    	android:orientation="vertical"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" >
+
+    	<EditText
+			android:id="@+id/editTitle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:hint="@string/edit_title"
+			android:ems="10"
+			android:inputType="textMultiLine"
+			android:maxLength="100" >
+			
+			<requestFocus />
+			
+		</EditText>
+
+		<EditText
+			android:id="@+id/editDescription"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:hint="@string/edit_description"
+			android:ems="10"
+			android:inputType="textMultiLine"
+			android:maxLength="100" />
+
+		<EditText
+			android:id="@+id/editText"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:hint="@string/edit_text"
+			android:ems="10"
+			android:inputType="textMultiLine" />
+
+		<ImageView
+        	android:id="@+id/imgView"
+        	android:layout_width="100dp"
+        	android:layout_height="100dp"
+        	android:layout_margin="16dp"
+        	android:clickable="true"
+        	android:focusable="false"
+        	android:onClick="onPreviewClick"
+        	android:scaleType="centerCrop"
+        	android:contentDescription="@string/empty"
+        	android:background="@drawable/image_shadow"
+        	android:src="@drawable/device_access_camera_light" />
+		
+	</LinearLayout>
+	
+</ScrollView>

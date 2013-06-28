@@ -5,6 +5,7 @@ gen/
 # Eclipse
 .classpath
 .project
+.settings/
 .externalToolBuilders/
 
 libs/

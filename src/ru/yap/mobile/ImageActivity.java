@@ -15,7 +15,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -73,7 +72,13 @@ public class ImageActivity extends FragmentActivity {
 				.build()
 			);			
 		}
-		DisplayImageOptions options = new DisplayImageOptions.Builder().cacheOnDisc().build();
+		DisplayImageOptions options = new DisplayImageOptions.Builder()
+			.showStubImage(R.drawable.navigation_refresh_light)
+			.showImageOnFail(R.drawable.alerts_and_states_warning_light)
+			.resetViewBeforeLoading()
+			.cacheOnDisc()
+			.build();
+		
 		imageLoader.displayImage(getIntent().getStringExtra("url"), imageView, options);
 	}
 	
@@ -100,7 +105,6 @@ public class ImageActivity extends FragmentActivity {
 	private void doShare() {
     	ImageLoader imageLoader = ImageLoader.getInstance();
     	Uri uri = Uri.fromFile(imageLoader.getDiscCache().get(getIntent().getStringExtra("url")));
-    	Log.d("test", "URI: " + uri.toString());
 		Intent shareIntent = new Intent(Intent.ACTION_SEND);
 		shareIntent.setType("image/*");
 	    shareIntent.putExtra(Intent.EXTRA_STREAM, uri);

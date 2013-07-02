@@ -1,6 +1,14 @@
 package ru.yap.mobile;
 
+import java.util.HashMap;
 import java.util.Locale;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.foxykeep.datadroid.exception.ConnectionException;
+import com.foxykeep.datadroid.network.NetworkConnection;
+import com.foxykeep.datadroid.network.NetworkConnection.ConnectionResult;
 
 import ru.yap.mobile.Contract.Forum;
 import ru.yap.mobile.Contract.Read;
@@ -28,9 +36,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 public class TopicActivity extends FragmentActivity implements ForumFragment.Callbacks, TopicFragment.Callbacks {
 	
@@ -265,6 +275,8 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 	
 	public void onRatingClick(View v) {
 
+		final int msgId = Integer.parseInt(v.getTag().toString());
+		
 		String[] items = new String[] { "+ ", "-" };
 
 		ListAdapter adapter = new ArrayAdapter<String>(
@@ -295,7 +307,8 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 		new AlertDialog.Builder(this).setAdapter(adapter, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int item) {
-				//...
+				VoteTask vt = new VoteTask();
+			    vt.execute(msgId, item);
 			}
 		}).setNegativeButton(R.string.discard, new DialogInterface.OnClickListener() {
 			@Override
@@ -308,6 +321,7 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 	
 	public void onPhotoClick(View v) {
 
+		/*
 		String[] items = new String[] {
 			getString(R.string.take_photo),
 			getString(R.string.choose_photo)
@@ -356,11 +370,14 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 				dialog.cancel();
 			}
 		}).setTitle(R.string.image).show();
-
+		 */
 	}
 
 	public void onSendClick(View v) {
-		//
+		EditText te = (EditText) findViewById(R.id.editText);
+		PostTask pt = new PostTask();
+	    pt.execute(te.getText().toString());
+	    te.setText("");
 	}
 
 	public void onAvatarClick(View v) {
@@ -428,7 +445,7 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
         	super.onPostExecute(result);
         }
     }
-    
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -457,6 +474,95 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
         	}
         }
     }
+
+    class VoteTask extends AsyncTask<Integer, Void, String> {
+
+    	@Override
+    	protected String doInBackground(Integer... param) {
+    		
+    		String response = "";
+    		
+			NetworkConnection connection = new NetworkConnection(
+				getApplicationContext(),
+				sharedPreferences.getString("api_url", "http://api.m-yap.ru") + "/v1/vote/" + TOPIC_ID + "/" + param[0] + ".json"
+			);
+
+			HashMap<String, String> params = new HashMap<String, String>();
+			params.put("rank", "" + param[1]);
+			params.put("login", sharedPreferences.getString("login", ""));
+			params.put("password", sharedPreferences.getString("password", ""));
+			connection.setParameters(params);
+
+			try {
+				ConnectionResult result = connection.execute();
+				try {
+					JSONObject bodyJson = new JSONObject(result.body);
+					response += bodyJson.getString("error");
+				} catch (JSONException e) {
+					getString(R.string.error_data);
+				}
+
+			} catch (ConnectionException e1) {
+				return getString(R.string.error_connection);
+			}
+
+			return response;
+    	}
+
+    	@Override
+    	protected void onPostExecute(String result) {
+    		super.onPostExecute(result);
+    		try {
+    			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+    		} catch (Exception e) {}
+    	}
+
+    }
+
+    class PostTask extends AsyncTask<String, Void, String> {
+
+    	@Override
+    	protected String doInBackground(String... param) {
+    		
+    		String response = "";
+    		
+			NetworkConnection connection = new NetworkConnection(
+				getApplicationContext(),
+				sharedPreferences.getString("api_url", "http://api.m-yap.ru") + "/v1/message/" + TOPIC_ID + ".json"
+			);
+
+			HashMap<String, String> params = new HashMap<String, String>();
+			params.put("text",     param[0]);
+			params.put("login",    sharedPreferences.getString("login", ""));
+			params.put("password", sharedPreferences.getString("password", ""));
+			connection.setParameters(params);
+
+			try {
+				ConnectionResult result = connection.execute();
+				try {
+					JSONObject bodyJson = new JSONObject(result.body);
+					response += bodyJson.getString("error");
+				} catch (JSONException e) {
+					getString(R.string.error_data);
+				}
+
+			} catch (ConnectionException e1) {
+				return getString(R.string.error_connection);
+			}
+
+			return response;
+    	}
+
+    	@Override
+    	protected void onPostExecute(String result) {
+    		super.onPostExecute(result);
+    		try {
+    			Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+    		} catch (Exception e) {}
+    	}
+
+    }
+    
 }
 
 //EOF

@@ -20,6 +20,9 @@
 	<string name="settings_messages_count_title">Количество сообщений</string>
 	<string name="settings_messages_count_summary">Количество сообщений на страницу</string>
 	
+	<string name="settings_api_url_title">API-сервер</string>
+	<string name="settings_api_url_summary">URL-адрес API-сервера</string>
+	
 	
 	<string name="settings_user">Учетная запись</string>
 	<string name="settings_user_login_title">Логин</string>

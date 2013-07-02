@@ -6,17 +6,19 @@
 		android:title="@string/settings_user">
 
 		<EditTextPreference
-		    android:enabled="false"
+		    android:enabled="true"
 			android:key="login"
 			android:maxLength="50"
+			android:defaultValue=""
 			android:title="@string/settings_user_login_title" >
 		</EditTextPreference>
 		
 		<EditTextPreference
+		    android:enabled="true"
 			android:key="password"
-			android:enabled="false"
 			android:maxLength="50"
 			android:inputType="textPassword"
+			android:defaultValue=""
 			android:title="@string/settings_user_passw_title" >
 		</EditTextPreference>
 	    		
@@ -40,7 +42,14 @@
 			android:defaultValue="Theme_Holo_Light"
 			android:title="@string/settings_theme_title" >
 		</ListPreference>
-		
+
+		<EditTextPreference
+			android:key="api_url"
+			android:defaultValue="http://api.m-yap.ru"
+			android:title="@string/settings_api_url_title"
+			android:summary="@string/settings_api_url_summary" >
+		</EditTextPreference>
+				
 		<EditTextPreference
 			android:key="topic_count"
 			android:inputType="number"

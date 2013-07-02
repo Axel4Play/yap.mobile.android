@@ -29,7 +29,7 @@ public final class ForumOperation implements Operation {
 		
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 		
-		NetworkConnection connection = new NetworkConnection(context, "http://api.m-yap.ru/v1/forum/" + request.getInt("forum_id") + ".json");
+		NetworkConnection connection = new NetworkConnection(context, sharedPreferences.getString("api_url", "http://api.m-yap.ru") + "/v1/forum/" + request.getInt("forum_id") + ".json");
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("count", sharedPreferences.getString("topic_count", "100"));

@@ -75,8 +75,8 @@ public class ImageActivity extends FragmentActivity {
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
 			.showStubImage(R.drawable.navigation_refresh_dark)
 			.showImageOnFail(R.drawable.alerts_and_states_warning_dark)
-			.resetViewBeforeLoading()
-			.cacheOnDisc()
+			//.resetViewBeforeLoading()
+			//.cacheOnDisc()
 			.build();
 		
 		imageLoader.displayImage(getIntent().getStringExtra("url"), imageView, options);

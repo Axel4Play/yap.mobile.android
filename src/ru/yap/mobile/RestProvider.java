@@ -123,9 +123,10 @@ public class RestProvider extends ContentProvider {
 				Topic.ORIGINAL
 			};
 	        MatrixCursor cursor = new MatrixCursor(columns);
-	        
-			NetworkConnection connection = new NetworkConnection(getContext(), "http://api.m-yap.ru/v1/topic/" + selectionArgs[0] + ".json");
+
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+	        
+			NetworkConnection connection = new NetworkConnection(getContext(), sharedPreferences.getString("api_url", "http://api.m-yap.ru") + "/v1/topic/" + selectionArgs[0] + ".json");
 			
 			HashMap<String, String> params = new HashMap<String, String>();
 			params.put("page",  selectionArgs[1]);

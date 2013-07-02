@@ -101,7 +101,7 @@ public class TopicFragment extends PullToRefreshListFragment {
 		super.onAttach(activity);
 		mCallbacks = (Callbacks) activity;
 	}
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -124,16 +124,16 @@ public class TopicFragment extends PullToRefreshListFragment {
 			.showStubImage(R.drawable.navigation_refresh_light)
 			.showImageForEmptyUri(R.drawable.social_person_light)
 			.showImageOnFail(R.drawable.alerts_and_states_warning_light)
-			.resetViewBeforeLoading()
-			.cacheInMemory()
-			.cacheOnDisc()
+			//.resetViewBeforeLoading()
+			//.cacheInMemory()
+			//.cacheOnDisc()
 			.build();
 		
 		optionsImg = new DisplayImageOptions.Builder()
 			.showStubImage(R.drawable.navigation_refresh_light)
 			.showImageOnFail(R.drawable.alerts_and_states_warning_light)
-			.resetViewBeforeLoading()
-			.cacheOnDisc()
+			//.resetViewBeforeLoading()
+			//.cacheOnDisc()
 			.build();
 		
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());

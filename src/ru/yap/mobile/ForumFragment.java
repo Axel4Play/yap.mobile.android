@@ -172,7 +172,7 @@ public class ForumFragment extends PullToRefreshListFragment {
 			.showImageOnFail(R.drawable.alerts_and_states_warning_light)
 			//.resetViewBeforeLoading()
 			//.cacheInMemory()
-			//.cacheOnDisc()
+			.cacheOnDisc(true)
 			.build();
 	}
 	

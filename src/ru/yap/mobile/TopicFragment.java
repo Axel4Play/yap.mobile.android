@@ -126,14 +126,14 @@ public class TopicFragment extends PullToRefreshListFragment {
 			.showImageOnFail(R.drawable.alerts_and_states_warning_light)
 			//.resetViewBeforeLoading()
 			//.cacheInMemory()
-			//.cacheOnDisc()
+			.cacheOnDisc(true)
 			.build();
 		
 		optionsImg = new DisplayImageOptions.Builder()
 			.showStubImage(R.drawable.navigation_refresh_light)
 			.showImageOnFail(R.drawable.alerts_and_states_warning_light)
 			//.resetViewBeforeLoading()
-			//.cacheOnDisc()
+			.cacheOnDisc(true)
 			.build();
 		
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
@@ -209,6 +209,7 @@ public class TopicFragment extends PullToRefreshListFragment {
 	        	}
 	        	
 	        	if (view.getId() == R.id.item_text) {
+	        		//((TextView) view).setTextIsSelectable(true);
 	        		((TextView) view).setText(Html.fromHtml(cursor.getString(columnIndex)));
 	        		((TextView) view).setMovementMethod(LinkMovementMethod.getInstance());
 	        		return true;

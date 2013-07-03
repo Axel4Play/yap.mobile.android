@@ -2,34 +2,37 @@
 <resources>
 
     <string name="app_name">ЯП.Мобайл</string>
-    
+
     <string name="menu_preferences">Настройки</string>
     <string name="menu_create">Новая тема</string>
     <string name="menu_forum">Разделы</string>
     <string name="menu_share">Поделиться</string>
     <string name="menu_search">Поиск</string>
     <string name="menu_send">Отправить</string>
+    <string name="menu_download">Сохранить</string>
 	<string name="menu_pages">1</string>
 
 	<string name="settings_theme">Оформление</string>
 	<string name="settings_theme_title">Тема оформления</string>
-	
+
 	<string name="settings_topic_count_title">Количество тем</string>
 	<string name="settings_topic_count_summary">Количество тем в разделе</string>
-	
+
 	<string name="settings_messages_count_title">Количество сообщений</string>
 	<string name="settings_messages_count_summary">Количество сообщений на страницу</string>
-	
+
 	<string name="settings_api_url_title">API-сервер</string>
 	<string name="settings_api_url_summary">URL-адрес API-сервера</string>
-	
-	
+
 	<string name="settings_user">Учетная запись</string>
 	<string name="settings_user_login_title">Логин</string>
 	<string name="settings_user_passw_title">Пароль</string>
-	
+
     <string name="search_hint">Поиск</string>
 
+    <string name="save_ok">Файл сохранен</string>
+    <string name="save_error">Ошибка при сохранении</string>
+    
     <string name="rank">Оценка</string>
 	<string name="pages">Страницы</string>
 	<string name="close">Закрыть</string>
@@ -37,18 +40,18 @@
     <string name="image">Изображение</string>
     <string name="send">Отправить</string>
     <string name="empty_text">Ничего не найдено</string>
-    
+
     <string name="take_photo">Сфотографировать</string>
     <string name="choose_photo">Выбрать</string>
-    
+
     <string name="edit_title">Название</string>
     <string name="edit_description">Описание</string>
     <string name="edit_text">Текст</string>
-    
+
     <string name="error_data">Ошибка формата данных</string>
     <string name="error_custom">Ошибка</string>
     <string name="error_connection">Ошибка соединения</string>
-    
+
     <string name="empty"></string>
-    
+
 </resources>

@@ -14,18 +14,25 @@
         android:showAsAction="collapseActionView|never"
 		android:actionViewClass="android.widget.SearchView" />
     
+	<item
+		android:id="@+id/share"
+		android:title="@string/menu_share"
+		android:icon="@android:drawable/ic_menu_share"
+		android:orderInCategory="300"
+		android:showAsAction="never" />
+    
     <item
         android:id="@+id/menu_create"
         android:title="@string/menu_create"
         android:icon="@drawable/content_edit_dark"
-        android:orderInCategory="300"
+        android:orderInCategory="400"
         android:showAsAction="never" />
 
     <item
         android:id="@+id/menu_preferences"
         android:title="@string/menu_preferences"
         android:icon="@drawable/action_settings_dark"
-        android:orderInCategory="400"
+        android:orderInCategory="500"
         android:showAsAction="never" />
 
 </menu>

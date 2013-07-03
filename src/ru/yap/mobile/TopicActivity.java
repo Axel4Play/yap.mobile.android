@@ -214,9 +214,20 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 				}
 			}).setTitle(R.string.pages).show();
 			return true;
+		case R.id.share:
+			doShare();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	private void doShare() {
+		Intent shareIntent = new Intent(Intent.ACTION_SEND);
+		shareIntent.setType("text/plain");
+		shareIntent.putExtra(Intent.EXTRA_SUBJECT, TITLE);
+		shareIntent.putExtra(Intent.EXTRA_TEXT, "http://www.yaplakal.com/forum3/topic" + TOPIC_ID + ".html");
+	    startActivity(Intent.createChooser(shareIntent, getResources().getText(R.string.menu_share)));
 	}
 
 	@Override
@@ -238,7 +249,6 @@ public class TopicActivity extends FragmentActivity implements ForumFragment.Cal
 			mSlidingPaneLayout.openPane();
 		}
 	}
-
 	
 	public void onImageClick(View v) {
 		String url = v.getTag().toString();
